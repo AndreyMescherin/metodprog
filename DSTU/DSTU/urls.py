@@ -9,3 +9,5 @@ urlpatterns = [
     path('author/<int:author_id>/', views.author_detail, name='author_detail'),
     path('info/', views.info, name='info'),
 ]
+
+handler404 = 'catalog.views.custom_404'

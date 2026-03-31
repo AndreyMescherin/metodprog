@@ -1,16 +1,11 @@
 import re
 
-# 1. Валидация логина
 def validate_login(login):
-    if not login or not login[0].isalpha():  # Логин не пустой и начинается с буквы
-        return False
-    if not all(c.isalnum() or c == '_' for c in login):  # Только буквы, цифры и _
-        return False
-    if login[-1] == '_':  # Не заканчивается на _
-        return False
-    if len(login) < 5 or len(login) > 20:  # Длина от 5 до 20
-        return False
-    return True
+    pattern = r'^[a-zA-Z][a-zA-Z0-9_]{3,18}[a-zA-Z0-9]$'
+    
+    if re.match(pattern, login):
+        return True
+    return False
 
 print("=== 1. Валидация логина ===")
 login_input = input("Введите логин для проверки: ")
