@@ -1,0 +1,42 @@
+{% extends 'schedule/base.html' %}
+
+{% block title %}Информация о преподавателе{% endblock %}
+
+{% block content %}
+<h1>{{ teacher.first_name }} {{ teacher.last_name }}</h1>
+
+<div style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+    <h3>Основная информация</h3>
+    <p><strong>Email:</strong> {{ teacher.email }}</p>
+    <p><strong>Телефон:</strong> {{ teacher.phone }}</p>
+    <p><strong>Дата найма:</strong> {{ teacher.hire_date }}</p>
+    <p><strong>Зарплата:</strong> {{ teacher.salary }}</p>
+</div>
+
+<div style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+    <h3>Дополнительная информация</h3>
+    {% if teacher_info %}
+        <p><strong>Адрес:</strong> {{ teacher_info.address }}</p>
+        <p><strong>Дата рождения:</strong> {{ teacher_info.birth_date }}</p>
+        <p><strong>Образование:</strong> {{ teacher_info.education }}</p>
+        <p><strong>Опыт:</strong> {{ teacher_info.experience_years }} лет</p>
+        <p><strong>Кабинет:</strong> {{ teacher_info.office_number }}</p>
+        <p><strong>Биография:</strong> {{ teacher_info.bio }}</p>
+    {% else %}
+        <p>Дополнительная информация не заполнена</p>
+    {% endif %}
+</div>
+
+<div style="background: white; padding: 1rem; border-radius: 8px;">
+    <h3>Курсы преподавателя</h3>
+    <ul>
+        {% for course in courses %}
+        <li>{{ course.title }} ({{ course.get_level_display }}, {{ course.duration_weeks }} недель)</li>
+        {% empty %}
+        <li>Нет курсов</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<a href="{% url 'schedule:teacher_index' %}" class="btn">Назад</a>
+{% endblock %}

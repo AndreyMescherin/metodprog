@@ -1,0 +1,116 @@
+{% extends 'schedule/base.html' %}
+
+{% block title %}Преподаватели{% endblock %}
+
+{% block content %}
+<h1>Список преподавателей</h1>
+
+<a href="{% url 'schedule:teacher_create' %}" class="btn" style="margin-bottom: 1rem;">+ Добавить преподавателя</a>
+
+<section class="teachers-list">
+    {% if teachers %}
+        {% for teacher in teachers %}
+        <article class="teacher-card">
+            <h2>{{ teacher.first_name }} {{ teacher.last_name }}</h2>
+            <div class="teacher-email">
+                <strong>Email:</strong> {{ teacher.email }}
+            </div>
+            {% if teacher.phone %}
+            <div class="teacher-phone">
+                <strong>Телефон:</strong> {{ teacher.phone }}
+            </div>
+            {% endif %}
+            <div class="teacher-courses">
+                <strong>Курсы:</strong>
+                {% with courses=teacher.courses.all %}
+                    {% if courses %}
+                        <ul>
+                        {% for course in courses %}
+                            <li>{{ course.title }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <span class="no-courses">Нет назначенных курсов</span>
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="teacher-actions">
+                <a href="{% url 'schedule:teacher_info' teacher.id %}" class="btn btn-sm">Подробнее</a>
+                <a href="{% url 'schedule:teacher_update' teacher.id %}" class="btn btn-warning btn-sm">Изменить</a>
+                <a href="{% url 'schedule:teacher_delete' teacher.id %}" class="btn btn-danger btn-sm">Удалить</a>
+            </div>
+        </article>
+        {% endfor %}
+    {% else %}
+        <div class="no-teachers">
+            <p>Нет преподавателей в системе.</p>
+            <a href="{% url 'schedule:teacher_create' %}" class="btn">Добавить первого преподавателя</a>
+        </div>
+    {% endif %}
+</section>
+
+<style>
+    .teachers-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+    
+    .teacher-card {
+        background: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+    }
+    
+    .teacher-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    
+    .teacher-card h2 {
+        margin: 0 0 1rem 0;
+        color: #333;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 0.5rem;
+    }
+    
+    .teacher-card div {
+        margin-bottom: 0.75rem;
+    }
+    
+    .teacher-courses ul {
+        margin: 0.5rem 0 0 1.5rem;
+    }
+    
+    .teacher-courses li {
+        margin: 0.25rem 0;
+    }
+    
+    .no-courses {
+        color: #999;
+        font-style: italic;
+    }
+    
+    .teacher-actions {
+        margin-top: 1rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid #eee;
+    }
+    
+    .no-teachers {
+        text-align: center;
+        padding: 3rem;
+        background: white;
+        border-radius: 8px;
+    }
+    
+    .btn-sm {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.875rem;
+        margin-right: 0.5rem;
+    }
+</style>
+{% endblock %}

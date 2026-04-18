@@ -1,0 +1,143 @@
+{% extends 'schedule/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+<form method="post">
+    {% csrf_token %}
+    
+    <h2>Основная информация</h2>
+    
+    {% if teacher_form.non_field_errors %}
+        <div class="alert alert-error">
+            {{ teacher_form.non_field_errors }}
+        </div>
+    {% endif %}
+    
+    {% for field in teacher_form %}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}">
+                {{ field.label }}
+                {% if field.field.required %}
+                    <span class="required">*</span>
+                {% else %}
+                    <span class="optional">(необязательно)</span>
+                {% endif %}
+            </label>
+            
+            {{ field }}
+            
+            {% if field.help_text %}
+                <small class="help-text">{{ field.help_text }}</small>
+            {% endif %}
+            
+            {% if field.errors %}
+                <div class="field-errors">
+                    {% for error in field.errors %}
+                        <span class="error">{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+    
+    <hr>
+    <h2>Дополнительная информация (необязательно)</h2>
+    
+    {% for field in info_form %}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {% if field.help_text %}
+                <small class="help-text">{{ field.help_text }}</small>
+            {% endif %}
+        </div>
+    {% endfor %}
+    
+    <div class="form-actions">
+        <button type="submit" class="btn">Сохранить</button>
+        <a href="{% url 'schedule:teacher_index' %}" class="btn btn-cancel">Отмена</a>
+    </div>
+</form>
+
+<style>
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+    
+    .required {
+        color: #dc3545;
+    }
+    
+    .optional {
+        color: #6c757d;
+        font-weight: normal;
+        font-size: 0.875rem;
+    }
+    
+    .help-text {
+        display: block;
+        margin-top: 0.25rem;
+        color: #6c757d;
+        font-size: 0.875rem;
+    }
+    
+    .field-errors {
+        margin-top: 0.25rem;
+    }
+    
+    .error {
+        color: #dc3545;
+        font-size: 0.875rem;
+    }
+    
+    hr {
+        margin: 1.5rem 0;
+        border: none;
+        border-top: 1px solid #ddd;
+    }
+    
+    h2 {
+        margin: 1.5rem 0 1rem 0;
+        color: #555;
+        font-size: 1.25rem;
+    }
+    
+    .form-actions {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #ddd;
+    }
+    
+    .btn-cancel {
+        background: #6c757d;
+        margin-left: 0.5rem;
+    }
+    
+    .btn-cancel:hover {
+        background: #5a6268;
+    }
+    
+    input, select, textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+    
+    input:focus, select:focus, textarea:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+    }
+</style>
+{% endblock %}

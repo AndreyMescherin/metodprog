@@ -1,0 +1,17 @@
+{% extends 'schedule/base.html' %}
+
+{% block title %}Подтверждение удаления{% endblock %}
+
+{% block content %}
+<h1>Подтверждение удаления</h1>
+
+<div style="background: white; padding: 2rem; border-radius: 8px;">
+    <p>Вы уверены, что хотите удалить {{ type }}: <strong>{{ object }}</strong>?</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Да, удалить</button>
+        <a href="javascript:history.back()" class="btn">Отмена</a>
+    </form>
+</div>
+{% endblock %}
