@@ -1,0 +1,64 @@
+{% extends 'schedule/base.html' %}
+
+{% block title %}{{ teacher.first_name }} {{ teacher.last_name }}{% endblock %}
+
+{% block content %}
+<h1>👨‍🏫 {{ teacher.first_name }} {{ teacher.last_name }}</h1>
+
+<div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <table style="width: auto;">
+        <tr>
+            <td style="font-weight: bold; padding-right: 1rem;">ID:</td>
+            <td>{{ teacher.id }}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Email:</td>
+            <td>{{ teacher.email }}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Телефон:</td>
+            <td>{{ teacher.phone }}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Дата найма:</td>
+            <td>{{ teacher.hire_date }}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Зарплата:</td>
+            <td>{{ teacher.salary }} ₽</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Кафедра:</td>
+            <td>{{ teacher.department|default:"—" }}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Ученая степень:</td>
+            <td>{{ teacher.get_academic_degree_display|default:"—" }}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Часы приема:</td>
+            <td>{{ teacher.office_hours|default:"—" }}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Рейтинг:</td>
+            <td>{{ teacher.rating|default:"0" }} / 5.0</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Статус:</td>
+            <td>
+                {% if teacher.is_active %}
+                <span style="color: green;">✅ Активен</span>
+                {% else %}
+                <span style="color: red;">❌ Неактивен</span>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+    
+    <div style="margin-top: 2rem;">
+        <a href="{% url 'schedule:teacher_update' teacher.id %}" class="btn btn-warning">✏️ Редактировать</a>
+        <a href="{% url 'schedule:teacher_delete' teacher.id %}" class="btn btn-danger">🗑️ Удалить</a>
+        <a href="{% url 'schedule:teacher_index' %}" class="btn" style="background: #6c757d;">↩️ Назад к списку</a>
+    </div>
+</div>
+{% endblock %}

@@ -3,75 +3,23 @@
 {% block title %}ORM-запросы{% endblock %}
 
 {% block content %}
-<h1>ORM-запросы - Демонстрация</h1>
+<h1>🔍 Примеры ORM-запросов</h1>
 
-<div style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-    <h3>1. Все студенты курса "{{ first_course.title|default:'(нет курсов)' }}"</h3>
-    <ul>
-        {% for student in students_of_course %}
-        <li>{{ student.first_name }} {{ student.last_name }}</li>
-        {% empty %}
-        <li>Нет студентов</li>
-        {% endfor %}
-    </ul>
-    <code>first_course.students.all()</code>
-</div>
-
-<div style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-    <h3>2. Все преподаватели, у которых больше 2 курсов</h3>
-    <ul>
-        {% for teacher in teachers_with_many_courses %}
-        <li>{{ teacher.first_name }} {{ teacher.last_name }} (курсов: {{ teacher.courses.count }})</li>
-        {% empty %}
-        <li>Нет преподавателей с >2 курсами</li>
-        {% endfor %}
-    </ul>
-    <code>Teacher.objects.annotate(course_count=Count('courses')).filter(course_count__gt=2)</code>
-</div>
-
-<div style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-    <h3>3. Студенты без курсов</h3>
-    <ul>
-        {% for student in students_without_courses %}
-        <li>{{ student.first_name }} {{ student.last_name }}</li>
-        {% empty %}
-        <li>Все студенты записаны на курсы</li>
-        {% endfor %}
-    </ul>
-    <code>Student.objects.filter(courses__isnull=True)</code>
-</div>
-
-<div style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-    <h3>4. Преподаватели без профиля (TeacherInfo)</h3>
-    <ul>
-        {% for teacher in teachers_without_profile %}
-        <li>{{ teacher.first_name }} {{ teacher.last_name }}</li>
-        {% empty %}
-        <li>У всех преподавателей есть профиль</li>
-        {% endfor %}
-    </ul>
-    <code>Teacher.objects.filter(info__isnull=True)</code>
-</div>
-
-<div style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-    <h3>5. Популярные курсы (больше 3 студентов)</h3>
-    <ul>
-        {% for course in popular_courses %}
-        <li>{{ course.title }} (студентов: {{ course.students.count }})</li>
-        {% empty %}
-        <li>Нет популярных курсов</li>
-        {% endfor %}
-    </ul>
-</div>
-
-<div style="background: white; padding: 1rem; border-radius: 8px;">
-    <h3>6. Студенты, записанные на курсы преподавателя {{ teacher_example.first_name|default:'' }}</h3>
-    <ul>
-        {% for student in students_of_teacher_courses %}
-        <li>{{ student.first_name }} {{ student.last_name }}</li>
-        {% empty %}
-        <li>Нет студентов</li>
-        {% endfor %}
-    </ul>
+<div style="background: white; padding: 2rem; border-radius: 8px;">
+    <h2>Статистика:</h2>
+    <table>
+        <tr>
+            <td>Всего преподавателей:</td>
+            <td><strong>{{ teachers.count }}</strong></td>
+        </tr>
+        <tr>
+            <td>Всего курсов:</td>
+            <td><strong>{{ courses.count }}</strong></td>
+        </tr>
+        <tr>
+            <td>Всего студентов:</td>
+            <td><strong>{{ students.count }}</strong></td>
+        </tr>
+    </table>
 </div>
 {% endblock %}

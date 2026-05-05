@@ -1,38 +1,76 @@
 {% extends 'schedule/base.html' %}
 
-{% block title %}Студент: {{ student }}{% endblock %}
+{% block title %}{{ student.first_name }} {{ student.last_name }}{% endblock %}
 
 {% block content %}
-<h1>{{ student.first_name }} {{ student.last_name }}</h1>
+<h1>👨‍🎓 {{ student.first_name }} {{ student.last_name }}</h1>
 
-<div style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-    <p><strong>Email:</strong> {{ student.email }}</p>
-    <p><strong>Телефон:</strong> {{ student.phone }}</p>
-    <p><strong>Дата рождения:</strong> {{ student.birth_date|date:"d.m.Y" }}</p>
-    <p><strong>Дата зачисления:</strong> {{ student.enrollment_date|date:"d.m.Y" }}</p>
-</div>
-
-<div style="background: white; padding: 1rem; border-radius: 8px;">
-    <h3>Курсы студента</h3>
-    <ul>
+<div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <table style="width: auto;">
+        <tr>
+            <td style="font-weight: bold; padding-right: 1rem;">ID:</td>
+            <td>{{ student.id }}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Студенческий билет:</td>
+            <td>{{ student.student_id|default:"—" }}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Email:</td>
+            <td>{{ student.email }}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Телефон:</td>
+            <td>{{ student.phone }}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Дата рождения:</td>
+            <td>{{ student.birth_date }}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Дата зачисления:</td>
+            <td>{{ student.enrollment_date }}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Группа:</td>
+            <td>{{ student.group_number|default:"—" }}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">GPA:</td>
+            <td>{{ student.gpa|default:"—" }}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Стипендия:</td>
+            <td>{{ student.scholarship|default:"0" }} ₽</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Год выпуска:</td>
+            <td>{{ student.graduation_year|default:"—" }}</td>
+        </tr>
+    </table>
+    
+    <h3 style="margin-top: 2rem;">📚 Записан на курсы:</h3>
+    {% if student.courses.all %}
+    <ul style="list-style: none; padding: 0;">
         {% for course in student.courses.all %}
-        <li style="margin-bottom: 0.5rem;">
-            {{ course.title }} ({{ course.get_level_display }}) - Преподаватель: {{ course.teacher|default:"Не назначен" }}
-            <form method="post" action="{% url 'schedule:student_unenroll' student.id course.id %}" style="display: inline;">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Отписать студента от курса?')">Отписать</button>
-            </form>
+        <li style="margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+            {{ course.title }} ({{ course.get_level_display }})
+            <a href="{% url 'schedule:student_unenroll' student.id course.id %}" 
+               class="btn btn-sm btn-danger"
+               onclick="return confirm('Отчислить студента с курса {{ course.title }}?')">
+               ❌ Отчислить
+            </a>
         </li>
-        {% empty %}
-        <li>Студент не записан ни на один курс</li>
         {% endfor %}
     </ul>
-    <a href="{% url 'schedule:student_enroll' student.id %}" class="btn" style="background: #28a745; color: white;">Записать на курс</a>
-</div>
-
-<div style="margin-top: 1rem;">
-    <a href="{% url 'schedule:student_index' %}" class="btn">Назад</a>
-    <a href="{% url 'schedule:student_update' student.id %}" class="btn btn-warning">Редактировать</a>
-    <a href="{% url 'schedule:student_delete' student.id %}" class="btn btn-danger">Удалить</a>
+    {% else %}
+    <p>Студент не записан ни на один курс</p>
+    {% endif %}
+    
+    <div style="margin-top: 2rem;">
+        <a href="{% url 'schedule:student_update' student.id %}" class="btn btn-warning">✏️ Редактировать</a>
+        <a href="{% url 'schedule:student_delete' student.id %}" class="btn btn-danger">🗑️ Удалить</a>
+        <a href="{% url 'schedule:student_index' %}" class="btn" style="background: #6c757d;">↩️ Назад к списку</a>
+    </div>
 </div>
 {% endblock %}

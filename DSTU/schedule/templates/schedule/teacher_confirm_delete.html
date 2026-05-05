@@ -1,0 +1,20 @@
+{% extends 'schedule/base.html' %}
+
+{% block title %}Удаление преподавателя{% endblock %}
+
+{% block content %}
+<h1>🗑️ Удаление преподавателя</h1>
+
+<div style="background: white; padding: 2rem; border-radius: 8px; text-align: center;">
+    <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+        Вы уверены, что хотите удалить преподавателя<br>
+        <strong>{{ teacher.first_name }} {{ teacher.last_name }}</strong>?
+    </p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">✅ Да, удалить</button>
+        <a href="{% url 'schedule:teacher_info' teacher.id %}" class="btn" style="background: #6c757d;">❌ Отмена</a>
+    </form>
+</div>
+{% endblock %}
