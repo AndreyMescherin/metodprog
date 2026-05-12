@@ -34,3 +34,16 @@
 [2026-05-11 02:03:42] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
 [2026-05-11 02:03:43] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
 [2026-05-11 02:03:45] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 12:46:44] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'wiacl' logged out
+[2026-05-12 12:48:37] [INFO    ] [auth                ] [signals:log_user_login:11] User 'wiacl' logged in successfully from IP: 127.0.0.1
+[2026-05-12 12:49:28] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'wiacl' logged out
+[2026-05-12 12:49:42] [INFO    ] [auth                ] [signals:log_user_login:11] User 'wiacl1' logged in successfully from IP: 127.0.0.1
+[2026-05-12 12:50:16] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'wiacl1' logged out
+[2026-05-12 12:50:31] [INFO    ] [auth                ] [signals:log_user_login:11] User 'wiacl2' logged in successfully from IP: 127.0.0.1
+[2026-05-12 12:50:57] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'wiacl2' logged out
+[2026-05-12 12:51:15] [INFO    ] [auth                ] [signals:log_user_login:11] User 'wiacl3' logged in successfully from IP: 127.0.0.1
+[2026-05-12 12:51:44] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'wiacl3' logged out
+[2026-05-12 12:51:58] [WARNING ] [auth                ] [signals:log_user_login_failed:27] Failed login attempt for user 'wiacl' from IP: 127.0.0.1
+[2026-05-12 12:52:08] [INFO    ] [auth                ] [signals:log_user_login:11] User 'wiacl' logged in successfully from IP: 127.0.0.1
+[2026-05-12 12:52:32] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'wiacl' logged out
+[2026-05-12 12:52:45] [INFO    ] [auth                ] [signals:log_user_login:11] User 'wiacl' logged in successfully from IP: 127.0.0.1
