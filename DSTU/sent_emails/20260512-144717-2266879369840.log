@@ -1,0 +1,26 @@
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: wiacl4@mail.ru
+Date: Tue, 12 May 2026 11:47:17 +0000
+Message-ID: <177858643704.12420.11752006372760561977@DESKTOP-V2ED9VO>
+
+
+You're receiving this email because you requested a password reset for your u=
+ser account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/auth/reset/Ng/d8gzqt-b44f4c76c1a9cfe97ad25d7d9d91fcc6/
+
+In case you=E2=80=99ve forgotten, you are: wiacl4
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

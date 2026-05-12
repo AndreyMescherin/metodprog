@@ -17,3 +17,158 @@
 [2026-05-12 12:52:08] [INFO    ] [auth                ] [signals:log_user_login:11] User 'wiacl' logged in successfully from IP: 127.0.0.1
 [2026-05-12 12:52:32] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'wiacl' logged out
 [2026-05-12 12:52:45] [INFO    ] [auth                ] [signals:log_user_login:11] User 'wiacl' logged in successfully from IP: 127.0.0.1
+[2026-05-12 14:45:14] [INFO    ] [django.utils.autoreload] [autoreload:run_with_reloader:681] Watching for file changes with StatReloader
+[2026-05-12 14:45:39] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'wiacl' logged out
+[2026-05-12 14:46:35] [WARNING ] [users.views         ] [views:register:37] Registration failed. Errors: <ul class="errorlist"><li>password2<ul class="errorlist" id="id_password2_error"><li>This field is required.</li></ul></li></ul>
+[2026-05-12 14:46:35] [WARNING ] [auth                ] [views:register:38] Failed registration attempt with data: wiacl4
+[2026-05-12 14:46:51] [INFO    ] [auth                ] [signals:log_user_login:11] User 'wiacl4' logged in successfully from IP: 127.0.0.1
+[2026-05-12 14:46:51] [INFO    ] [users.views         ] [views:register:30] New user registered: wiacl4 (email: wiacl4@mail.ru)
+[2026-05-12 14:46:51] [INFO    ] [auth                ] [views:register:31] User wiacl4 registered and logged in
+[2026-05-12 14:47:04] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'wiacl4' logged out
+[2026-05-12 14:48:37] [INFO    ] [auth                ] [signals:log_user_login:11] User 'wiacl4' logged in successfully from IP: 127.0.0.1
+[2026-05-12 14:49:00] [INFO    ] [users.views         ] [views:user_detail:98] User wiacl4 viewing profile of wiacl1
+[2026-05-12 14:49:04] [WARNING ] [users.views         ] [views:user_detail:92] User wiacl4 tried to view private profile of admin
+[2026-05-12 14:49:07] [WARNING ] [users.views         ] [views:user_detail:92] User wiacl4 tried to view private profile of wiacl
+[2026-05-12 14:49:33] [INFO    ] [users.views         ] [views:profile_edit:65] User wiacl4 updated profile
+[2026-05-12 14:49:49] [INFO    ] [users.views         ] [views:profile_edit:65] User wiacl4 updated profile
+[2026-05-12 14:49:58] [INFO    ] [users.views         ] [views:add_friend:123] User wiacl4 added admin as friend
+[2026-05-12 14:49:58] [INFO    ] [users.views         ] [views:user_detail:98] User wiacl4 viewing profile of admin
+[2026-05-12 14:50:08] [INFO    ] [users.views         ] [views:remove_friend:136] User wiacl4 removed admin from friends
+[2026-05-12 14:50:08] [WARNING ] [users.views         ] [views:user_detail:92] User wiacl4 tried to view private profile of admin
+[2026-05-12 14:50:14] [WARNING ] [users.views         ] [views:user_detail:92] User wiacl4 tried to view private profile of admin
+[2026-05-12 14:50:22] [INFO    ] [users.views         ] [views:user_detail:98] User wiacl4 viewing profile of wiacl1
+[2026-05-12 14:50:28] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'wiacl4' logged out
+[2026-05-12 14:51:22] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:51:24] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:51:25] [WARNING ] [users.views         ] [views:user_detail:92] User testuser tried to view private profile of anotheruser
+[2026-05-12 14:51:27] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:51:27] [INFO    ] [users.views         ] [views:user_detail:98] User testuser viewing profile of anotheruser
+[2026-05-12 14:51:29] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:51:30] [INFO    ] [users.views         ] [views:user_detail:98] User testuser viewing profile of anotheruser
+[2026-05-12 14:51:32] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:51:32] [INFO    ] [users.views         ] [views:user_detail:98] User testuser viewing profile of anotheruser
+[2026-05-12 14:51:34] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:51:34] [INFO    ] [users.views         ] [views:user_detail:98] User testuser viewing profile of anotheruser
+[2026-05-12 14:51:36] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:51:36] [INFO    ] [users.views         ] [views:user_detail:98] User testuser viewing profile of anotheruser
+[2026-05-12 14:51:38] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:51:38] [WARNING ] [users.views         ] [views:user_detail:92] User testuser tried to view private profile of anotheruser
+[2026-05-12 14:51:40] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:14] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 14:52:14] [INFO    ] [users.views         ] [views:register:30] New user registered: testuser (email: test@test.com)
+[2026-05-12 14:52:14] [INFO    ] [auth                ] [views:register:31] User testuser registered and logged in
+[2026-05-12 14:52:15] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 14:52:15] [INFO    ] [users.views         ] [views:register:30] New user registered: testuser (email: test@test.com)
+[2026-05-12 14:52:15] [INFO    ] [auth                ] [views:register:31] User testuser registered and logged in
+[2026-05-12 14:52:16] [WARNING ] [users.views         ] [views:register:37] Registration failed. Errors: <ul class="errorlist"><li>email<ul class="errorlist" id="id_email_error"><li>Пользователь с таким email уже существует.</li></ul></li></ul>
+[2026-05-12 14:52:16] [WARNING ] [auth                ] [views:register:38] Failed registration attempt with data: newuser
+[2026-05-12 14:52:17] [WARNING ] [users.views         ] [views:register:37] Registration failed. Errors: <ul class="errorlist"><li>username<ul class="errorlist" id="id_username_error"><li>A user with that username already exists.</li></ul></li></ul>
+[2026-05-12 14:52:17] [WARNING ] [auth                ] [views:register:38] Failed registration attempt with data: testuser
+[2026-05-12 14:52:19] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:19] [INFO    ] [users.views         ] [views:register:20] Authenticated user testuser tried to access register page
+[2026-05-12 14:52:20] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 14:52:22] [WARNING ] [auth                ] [signals:log_user_login_failed:27] Failed login attempt for user 'testuser' from IP: 127.0.0.1
+[2026-05-12 14:52:24] [WARNING ] [auth                ] [signals:log_user_login_failed:27] Failed login attempt for user 'nonexistent' from IP: 127.0.0.1
+[2026-05-12 14:52:26] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:26] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'testuser' logged out
+[2026-05-12 14:52:27] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:27] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'testuser' logged out
+[2026-05-12 14:52:28] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 14:52:29] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 14:52:29] [INFO    ] [users.views         ] [views:register:30] New user registered: testuser (email: test@test.com)
+[2026-05-12 14:52:29] [INFO    ] [auth                ] [views:register:31] User testuser registered and logged in
+[2026-05-12 14:52:32] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:32] [INFO    ] [users.views         ] [views:add_friend:123] User testuser added anotheruser as friend
+[2026-05-12 14:52:34] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:34] [INFO    ] [users.views         ] [views:remove_friend:136] User testuser removed anotheruser from friends
+[2026-05-12 14:52:36] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:36] [WARNING ] [users.views         ] [views:add_friend:116] User testuser tried to add self as friend
+[2026-05-12 14:52:37] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:38] [INFO    ] [users.views         ] [views:add_friend:119] User testuser already friends with anotheruser
+[2026-05-12 14:52:39] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:43] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:43] [INFO    ] [users.views         ] [views:add_friend:119] User testuser already friends with anotheruser
+[2026-05-12 14:52:45] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:45] [INFO    ] [users.views         ] [views:remove_friend:136] User testuser removed anotheruser from friends
+[2026-05-12 14:52:55] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:56] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:57] [WARNING ] [users.views         ] [views:user_detail:92] User testuser tried to view private profile of anotheruser
+[2026-05-12 14:52:58] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:59] [INFO    ] [users.views         ] [views:user_detail:98] User testuser viewing profile of anotheruser
+[2026-05-12 14:53:00] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:01] [INFO    ] [users.views         ] [views:user_detail:98] User testuser viewing profile of anotheruser
+[2026-05-12 14:53:02] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:03] [INFO    ] [users.views         ] [views:user_detail:98] User testuser viewing profile of anotheruser
+[2026-05-12 14:53:04] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:05] [INFO    ] [users.views         ] [views:user_detail:98] User testuser viewing profile of anotheruser
+[2026-05-12 14:53:06] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:07] [INFO    ] [users.views         ] [views:user_detail:98] User testuser viewing profile of anotheruser
+[2026-05-12 14:53:08] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:09] [WARNING ] [users.views         ] [views:user_detail:92] User testuser tried to view private profile of anotheruser
+[2026-05-12 14:53:10] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:12] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:12] [WARNING ] [django.request      ] [log:log_message:249] Not Found: /users/users/99999/
+[2026-05-12 14:53:13] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:13] [WARNING ] [users.views         ] [views:profile_edit:69] Profile update failed for testuser: <ul class="errorlist"><li>email<ul class="errorlist" id="id_email_error"><li>Enter a valid email address.</li></ul></li></ul>
+[2026-05-12 14:53:14] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:14] [INFO    ] [users.views         ] [views:profile_edit:65] User testuser updated profile
+[2026-05-12 15:00:04] [INFO    ] [django.utils.autoreload] [autoreload:run_with_reloader:681] Watching for file changes with StatReloader
+[2026-05-12 15:00:14] [WARNING ] [auth                ] [signals:log_user_login_failed:27] Failed login attempt for user 'wiacl4' from IP: 127.0.0.1
+[2026-05-12 15:11:28] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 15:11:28] [INFO    ] [users.views         ] [views:register:30] New user registered: testuser (email: test@test.com)
+[2026-05-12 15:11:28] [INFO    ] [auth                ] [views:register:31] User testuser registered and logged in
+[2026-05-12 15:11:29] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 15:11:29] [INFO    ] [users.views         ] [views:register:30] New user registered: testuser (email: test@test.com)
+[2026-05-12 15:11:29] [INFO    ] [auth                ] [views:register:31] User testuser registered and logged in
+[2026-05-12 15:11:30] [WARNING ] [users.views         ] [views:register:37] Registration failed. Errors: <ul class="errorlist"><li>email<ul class="errorlist" id="id_email_error"><li>Пользователь с таким email уже существует.</li></ul></li></ul>
+[2026-05-12 15:11:30] [WARNING ] [auth                ] [views:register:38] Failed registration attempt with data: newuser
+[2026-05-12 15:11:31] [WARNING ] [users.views         ] [views:register:37] Registration failed. Errors: <ul class="errorlist"><li>username<ul class="errorlist" id="id_username_error"><li>A user with that username already exists.</li></ul></li></ul>
+[2026-05-12 15:11:31] [WARNING ] [auth                ] [views:register:38] Failed registration attempt with data: testuser
+[2026-05-12 15:11:33] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:33] [INFO    ] [users.views         ] [views:register:20] Authenticated user testuser tried to access register page
+[2026-05-12 15:11:35] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 15:11:36] [WARNING ] [auth                ] [signals:log_user_login_failed:27] Failed login attempt for user 'testuser' from IP: 127.0.0.1
+[2026-05-12 15:11:38] [WARNING ] [auth                ] [signals:log_user_login_failed:27] Failed login attempt for user 'nonexistent' from IP: 127.0.0.1
+[2026-05-12 15:11:40] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:40] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'testuser' logged out
+[2026-05-12 15:11:41] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:41] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'testuser' logged out
+[2026-05-12 15:11:42] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 15:11:43] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 15:11:43] [INFO    ] [users.views         ] [views:register:30] New user registered: testuser (email: test@test.com)
+[2026-05-12 15:11:43] [INFO    ] [auth                ] [views:register:31] User testuser registered and logged in
+[2026-05-12 15:11:45] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:46] [INFO    ] [users.views         ] [views:add_friend:123] User testuser added anotheruser as friend
+[2026-05-12 15:11:47] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:48] [INFO    ] [users.views         ] [views:remove_friend:136] User testuser removed anotheruser from friends
+[2026-05-12 15:11:49] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:49] [WARNING ] [users.views         ] [views:add_friend:116] User testuser tried to add self as friend
+[2026-05-12 15:11:51] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:51] [INFO    ] [users.views         ] [views:add_friend:119] User testuser already friends with anotheruser
+[2026-05-12 15:11:53] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:56] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:56] [INFO    ] [users.views         ] [views:add_friend:123] User testuser added anotheruser as friend
+[2026-05-12 15:11:58] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:58] [INFO    ] [users.views         ] [views:remove_friend:136] User testuser removed anotheruser from friends
+[2026-05-12 15:12:07] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:08] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:09] [WARNING ] [users.views         ] [views:user_detail:92] User testuser tried to view private profile of anotheruser
+[2026-05-12 15:12:10] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:11] [INFO    ] [users.views         ] [views:user_detail:98] User testuser viewing profile of anotheruser
+[2026-05-12 15:12:12] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:13] [INFO    ] [users.views         ] [views:user_detail:98] User testuser viewing profile of anotheruser
+[2026-05-12 15:12:14] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:15] [INFO    ] [users.views         ] [views:user_detail:98] User testuser viewing profile of anotheruser
+[2026-05-12 15:12:16] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:17] [INFO    ] [users.views         ] [views:user_detail:98] User testuser viewing profile of anotheruser
+[2026-05-12 15:12:18] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:19] [INFO    ] [users.views         ] [views:user_detail:98] User testuser viewing profile of anotheruser
+[2026-05-12 15:12:20] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:21] [WARNING ] [users.views         ] [views:user_detail:92] User testuser tried to view private profile of anotheruser
+[2026-05-12 15:12:22] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:23] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:23] [WARNING ] [django.request      ] [log:log_message:249] Not Found: /users/users/99999/
+[2026-05-12 15:12:25] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:25] [WARNING ] [users.views         ] [views:profile_edit:69] Profile update failed for testuser: <ul class="errorlist"><li>email<ul class="errorlist" id="id_email_error"><li>Enter a valid email address.</li></ul></li></ul>
+[2026-05-12 15:12:26] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:26] [INFO    ] [users.views         ] [views:profile_edit:65] User testuser updated profile

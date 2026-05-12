@@ -47,3 +47,92 @@
 [2026-05-12 12:52:08] [INFO    ] [auth                ] [signals:log_user_login:11] User 'wiacl' logged in successfully from IP: 127.0.0.1
 [2026-05-12 12:52:32] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'wiacl' logged out
 [2026-05-12 12:52:45] [INFO    ] [auth                ] [signals:log_user_login:11] User 'wiacl' logged in successfully from IP: 127.0.0.1
+[2026-05-12 14:45:39] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'wiacl' logged out
+[2026-05-12 14:46:35] [WARNING ] [auth                ] [views:register:38] Failed registration attempt with data: wiacl4
+[2026-05-12 14:46:51] [INFO    ] [auth                ] [signals:log_user_login:11] User 'wiacl4' logged in successfully from IP: 127.0.0.1
+[2026-05-12 14:46:51] [INFO    ] [auth                ] [views:register:31] User wiacl4 registered and logged in
+[2026-05-12 14:47:04] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'wiacl4' logged out
+[2026-05-12 14:48:37] [INFO    ] [auth                ] [signals:log_user_login:11] User 'wiacl4' logged in successfully from IP: 127.0.0.1
+[2026-05-12 14:50:28] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'wiacl4' logged out
+[2026-05-12 14:51:22] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:51:24] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:51:27] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:51:29] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:51:32] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:51:34] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:51:36] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:51:38] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:51:40] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:14] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 14:52:14] [INFO    ] [auth                ] [views:register:31] User testuser registered and logged in
+[2026-05-12 14:52:15] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 14:52:15] [INFO    ] [auth                ] [views:register:31] User testuser registered and logged in
+[2026-05-12 14:52:16] [WARNING ] [auth                ] [views:register:38] Failed registration attempt with data: newuser
+[2026-05-12 14:52:17] [WARNING ] [auth                ] [views:register:38] Failed registration attempt with data: testuser
+[2026-05-12 14:52:19] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:20] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 14:52:22] [WARNING ] [auth                ] [signals:log_user_login_failed:27] Failed login attempt for user 'testuser' from IP: 127.0.0.1
+[2026-05-12 14:52:24] [WARNING ] [auth                ] [signals:log_user_login_failed:27] Failed login attempt for user 'nonexistent' from IP: 127.0.0.1
+[2026-05-12 14:52:26] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:26] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'testuser' logged out
+[2026-05-12 14:52:27] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:27] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'testuser' logged out
+[2026-05-12 14:52:28] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 14:52:29] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 14:52:29] [INFO    ] [auth                ] [views:register:31] User testuser registered and logged in
+[2026-05-12 14:52:32] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:34] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:36] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:37] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:39] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:43] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:45] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:55] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:56] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:52:58] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:00] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:02] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:04] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:06] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:08] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:10] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:12] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:13] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 14:53:14] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:00:14] [WARNING ] [auth                ] [signals:log_user_login_failed:27] Failed login attempt for user 'wiacl4' from IP: 127.0.0.1
+[2026-05-12 15:11:28] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 15:11:28] [INFO    ] [auth                ] [views:register:31] User testuser registered and logged in
+[2026-05-12 15:11:29] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 15:11:29] [INFO    ] [auth                ] [views:register:31] User testuser registered and logged in
+[2026-05-12 15:11:30] [WARNING ] [auth                ] [views:register:38] Failed registration attempt with data: newuser
+[2026-05-12 15:11:31] [WARNING ] [auth                ] [views:register:38] Failed registration attempt with data: testuser
+[2026-05-12 15:11:33] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:35] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 15:11:36] [WARNING ] [auth                ] [signals:log_user_login_failed:27] Failed login attempt for user 'testuser' from IP: 127.0.0.1
+[2026-05-12 15:11:38] [WARNING ] [auth                ] [signals:log_user_login_failed:27] Failed login attempt for user 'nonexistent' from IP: 127.0.0.1
+[2026-05-12 15:11:40] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:40] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'testuser' logged out
+[2026-05-12 15:11:41] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:41] [INFO    ] [auth                ] [signals:log_user_logout:18] User 'testuser' logged out
+[2026-05-12 15:11:42] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 15:11:43] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: 127.0.0.1
+[2026-05-12 15:11:43] [INFO    ] [auth                ] [views:register:31] User testuser registered and logged in
+[2026-05-12 15:11:45] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:47] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:49] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:51] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:53] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:56] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:11:58] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:07] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:08] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:10] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:12] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:14] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:16] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:18] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:20] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:22] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:23] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:25] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
+[2026-05-12 15:12:26] [INFO    ] [auth                ] [signals:log_user_login:11] User 'testuser' logged in successfully from IP: None
