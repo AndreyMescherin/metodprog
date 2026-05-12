@@ -1,0 +1,27 @@
+{% extends 'schedule/base.html' %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+<div style="max-width: 500px; margin: 2rem auto;">
+    <h1>📝 Регистрация</h1>
+    
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">✅ Зарегистрироваться</button>
+    </form>
+    
+    <p style="margin-top: 1rem; text-align: center;">
+        Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a>
+    </p>
+</div>
+
+<style>
+    form p { margin-bottom: 1rem; }
+    form label { display: block; font-weight: bold; margin-bottom: 0.25rem; }
+    form input { width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
+    .errorlist { color: #dc3545; list-style: none; padding: 0; font-size: 0.875rem; }
+    .helptext { display: block; color: #6c757d; font-size: 0.875rem; }
+</style>
+{% endblock %}

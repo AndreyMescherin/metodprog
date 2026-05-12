@@ -1,0 +1,74 @@
+{% extends 'schedule/base.html' %}
+
+{% block title %}Мой профиль{% endblock %}
+
+{% block content %}
+<h1>👤 Мой профиль</h1>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+    <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+            {% if profile_user.avatar %}
+                <img src="{{ profile_user.avatar.url }}" alt="Аватар" style="max-width: 200px; max-height: 200px; border-radius: 50%; border: 3px solid #007bff;">
+            {% else %}
+                <div style="width: 150px; height: 150px; border-radius: 50%; background: #e9ecef; display: inline-flex; align-items: center; justify-content: center; font-size: 3rem; border: 3px solid #ddd;">
+                    👤
+                </div>
+            {% endif %}
+        </div>
+        
+        <h2>Личная информация</h2>
+        <table style="width: 100%; box-shadow: none;">
+            <tr><td><strong>Логин:</strong></td><td>{{ profile_user.username }}</td></tr>
+            <tr><td><strong>Имя:</strong></td><td>{{ profile_user.get_full_name }}</td></tr>
+            {% if profile_user.middle_name %}
+            <tr><td><strong>Отчество:</strong></td><td>{{ profile_user.middle_name }}</td></tr>
+            {% endif %}
+            <tr><td><strong>Email:</strong></td><td>{{ profile_user.email }}</td></tr>
+            <tr><td><strong>Телефон:</strong></td><td>{{ profile_user.phone|default:"—" }}</td></tr>
+            {% if profile_user.birth_date %}
+            <tr><td><strong>Дата рождения:</strong></td><td>{{ profile_user.birth_date }}</td></tr>
+            {% endif %}
+            {% if profile_user.bio %}
+            <tr><td><strong>О себе:</strong></td><td>{{ profile_user.bio }}</td></tr>
+            {% endif %}
+            <tr><td><strong>Дата регистрации:</strong></td><td>{{ profile_user.date_joined|date:"d.m.Y" }}</td></tr>
+            <tr>
+                <td><strong>Профиль:</strong></td>
+                <td>
+                    {% if profile_user.is_public %}
+                    <span style="color: green;">Публичный 🌐</span>
+                    {% else %}
+                    <span style="color: orange;">Приватный 🔒</span>
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+        
+        <div style="margin-top: 1.5rem;">
+            <a href="{% url 'users:profile_edit' %}" class="btn">✏️ Редактировать</a>
+            <a href="{% url 'password_change' %}" class="btn btn-warning">🔒 Сменить пароль</a>
+        </div>
+    </div>
+    
+    <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <h2>👥 Друзья ({{ friends.count }})</h2>
+        {% if friends %}
+        <ul style="list-style: none; padding: 0;">
+            {% for friend in friends %}
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">
+                <a href="{% url 'users:user_detail' friend.id %}">{{ friend.get_full_name|default:friend.username }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>У вас пока нет друзей.</p>
+        {% endif %}
+        
+        <div style="margin-top: 1rem;">
+            <a href="{% url 'users:user_list' %}" class="btn">🔍 Найти друзей</a>
+            <a href="{% url 'users:friends_list' %}" class="btn">👥 Все друзья</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

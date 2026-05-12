@@ -16,6 +16,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+AUTH_USER_MODEL = 'users.User'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
@@ -39,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'catalog',
-    'schedule'
+    'schedule',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'DSTU.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # Добавьте эту строку
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,3 +135,22 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Медиа файлы (загруженные пользователями)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'schedule:teacher_index'
+LOGOUT_REDIRECT_URL = 'schedule:teacher_index'
+
+# Настройки email для восстановления пароля
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
+
+DEFAULT_FROM_EMAIL = 'webmaster@localhost'
+
+# Импорт и настройка логирования
+from .logging_config import setup_logging
+setup_logging()

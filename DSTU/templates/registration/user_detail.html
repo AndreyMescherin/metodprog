@@ -1,0 +1,54 @@
+{% extends 'schedule/base.html' %}
+
+{% block title %}{{ profile_user.get_full_name }}{% endblock %}
+
+{% block content %}
+<h1>👤 {{ profile_user.get_full_name|default:profile_user.username }}</h1>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+    <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <h2>Информация</h2>
+        <table style="width: 100%; box-shadow: none;">
+            <tr><td><strong>Имя:</strong></td><td>{{ profile_user.get_full_name }}</td></tr>
+            {% if profile_user.middle_name %}
+            <tr><td><strong>Отчество:</strong></td><td>{{ profile_user.middle_name }}</td></tr>
+            {% endif %}
+            <tr><td><strong>Email:</strong></td><td>{{ profile_user.email }}</td></tr>
+            <tr><td><strong>Телефон:</strong></td><td>{{ profile_user.phone|default:"—" }}</td></tr>
+            {% if profile_user.bio %}
+            <tr><td><strong>О себе:</strong></td><td>{{ profile_user.bio }}</td></tr>
+            {% endif %}
+            <tr><td><strong>Дата регистрации:</strong></td><td>{{ profile_user.date_joined|date:"d.m.Y" }}</td></tr>
+        </table>
+        
+        {% if not is_own_profile %}
+        <div style="margin-top: 1.5rem;">
+            {% if is_friend %}
+                <a href="{% url 'users:remove_friend' profile_user.id %}" class="btn btn-danger">❌ Удалить из друзей</a>
+            {% else %}
+                <a href="{% url 'users:add_friend' profile_user.id %}" class="btn">➕ Добавить в друзья</a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+    
+    <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <h2>👥 Друзья ({{ friends.count }})</h2>
+        {% if friends %}
+        <ul style="list-style: none; padding: 0;">
+            {% for friend in friends %}
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">
+                <a href="{% url 'users:user_detail' friend.id %}">{{ friend.get_full_name|default:friend.username }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>Нет друзей</p>
+        {% endif %}
+    </div>
+</div>
+
+<div style="margin-top: 1rem;">
+    <a href="{% url 'users:user_list' %}" class="btn">↩️ К списку пользователей</a>
+</div>
+{% endblock %}

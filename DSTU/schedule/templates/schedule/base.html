@@ -114,24 +114,62 @@
             border: 1px solid #ddd; 
             border-radius: 4px; 
         }
-        .nav-dropdown { 
-            position: relative; 
-            display: inline-block; 
-        }
-        .nav-dropdown-content { 
-            display: none; 
-            position: absolute; 
-            background: #444; 
-            min-width: 160px; 
-            z-index: 1; 
-        }
-        .nav-dropdown:hover .nav-dropdown-content { 
-            display: block; 
-        }
-        .nav-dropdown-content a { 
-            display: block; 
-            padding: 0.5rem 1rem; 
-        }
+        .nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+    .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;              /* меню прижимается вправо */
+    top: 100%;
+
+    background: #444;
+    min-width: 220px;
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 1000;
+}
+
+    .nav-dropdown:hover .nav-dropdown-content {
+    display: block;
+}
+
+/* ОБЩИЕ стили для ссылок и кнопки */
+    .nav-dropdown-content a,
+    .nav-dropdown-content button {
+    display: block;
+    width: 100%;
+
+    padding: 0.75rem 1rem;
+
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    font-size: 1rem;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* hover эффект */
+    .nav-dropdown-content a:hover,
+    .nav-dropdown-content button:hover {
+    background: #555;
+}
+
+/* form не ломает layout */
+    .nav-dropdown-content form {
+    margin: 0;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+}
     </style>
 </head>
 <body>
@@ -142,19 +180,33 @@
 </header>
 
 <!-- NAV - навигационное меню -->
+<!-- NAV - навигационное меню -->
 <nav>
     <a href="{% url 'schedule:teacher_index' %}">👨‍🏫 Преподаватели</a>
     <a href="{% url 'schedule:course_index' %}">📖 Курсы</a>
     <a href="{% url 'schedule:student_index' %}">👨‍🎓 Студенты</a>
     <a href="{% url 'schedule:orm_queries' %}">🔍 ORM-запросы</a>
-    <div class="nav-dropdown">
-        <a href="#">➕ Создать</a>
-        <div class="nav-dropdown-content">
-            <a href="{% url 'schedule:teacher_create' %}">👨‍🏫 Преподавателя</a>
-            <a href="{% url 'schedule:course_create' %}">📖 Курс</a>
-            <a href="{% url 'schedule:student_create' %}">👨‍🎓 Студента</a>
+    
+    {% if user.is_authenticated %}
+        <div class="nav-dropdown" style="float: right;">
+            <a href="#">{{ user.first_name|default:user.username }}</a>
+            <div class="nav-dropdown-content">
+                <a href="{% url 'users:profile' %}">👤 Профиль</a>
+                <a href="{% url 'password_change' %}">🔒 Сменить пароль</a>
+                <form method="post" action="{% url 'logout' %}" >
+                    {% csrf_token %}
+                    <button type="submit" >
+                        🚪 Выйти
+                    </button>
+                </form>
+            </div>
         </div>
-    </div>
+    {% else %}
+        <div style="float: right;">
+            <a href="{% url 'login' %}">🔐 Войти</a>
+            <a href="{% url 'users:register' %}">📝 Регистрация</a>
+        </div>
+    {% endif %}
 </nav>
 
 <!-- MAIN - основное содержимое -->

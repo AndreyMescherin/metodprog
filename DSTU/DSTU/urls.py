@@ -1,6 +1,8 @@
 from django.urls import path, include
 from catalog import views
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -11,7 +13,13 @@ urlpatterns = [
     path('author/<int:author_id>/', views.author_detail, name='author_detail'),
     path('info/', views.info, name='info'),
     path('schedule/', include('schedule.urls')),
+    path('auth/', include('django.contrib.auth.urls')),  # Стандартные URL авторизации
+    path('users/', include('users.urls')),  # URL нашего приложения users
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 handler404 = 'catalog.views.custom_404'
 admin.site.site_header = 'Управление расписанием'

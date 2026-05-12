@@ -1,0 +1,12 @@
+{% extends 'schedule/base.html' %}
+
+{% block title %}Выход{% endblock %}
+
+{% block content %}
+<div style="text-align: center; max-width: 500px; margin: 2rem auto;">
+    <h1>👋 Вы вышли из системы</h1>
+    <p>Вы успешно вышли из своего аккаунта.</p>
+    <a href="{% url 'login' %}" class="btn">Войти снова</a>
+    <a href="{% url 'schedule:teacher_index' %}" class="btn">На главную</a>
+</div>
+{% endblock %}

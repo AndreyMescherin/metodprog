@@ -1,0 +1,34 @@
+{% extends 'schedule/base.html' %}
+
+{% block title %}Мои друзья{% endblock %}
+
+{% block content %}
+<h1>👥 Мои друзья ({{ friends.count }})</h1>
+
+{% if friends %}
+<table>
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Email</th>
+            <th>Телефон</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for friend in friends %}
+        <tr>
+            <td><a href="{% url 'users:user_detail' friend.id %}">{{ friend.get_full_name }}</a></td>
+            <td>{{ friend.email }}</td>
+            <td>{{ friend.phone|default:"—" }}</td>
+            <td>
+                <a href="{% url 'users:remove_friend' friend.id %}" class="btn btn-sm btn-danger">❌ Удалить</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>У вас пока нет друзей. <a href="{% url 'users:user_list' %}">Найти друзей</a></p>
+{% endif %}
+{% endblock %}
